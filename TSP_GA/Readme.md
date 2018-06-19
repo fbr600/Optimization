@@ -136,3 +136,33 @@ double mutq    = 0.1;        //probability of mutation
 
 This is the piece of code that iterates and Compute a solution for each combination of the parameters acting 
 in the range explained before.
+
+```
+for(n=250;n<550;n+=10) 
+{
+  p = (int**)malloc(n*sizeof(int*)); 
+  for(i=0;i<n;i++) 
+    p[i] = (int*)malloc(m*sizeof(double)); 
+    for(t=2;t<11;t+=1) 
+      for(posCr=13;posCr<23;posCr+=1) 
+      { 
+      //Inizialization the population randomly 
+      for(i=0;i<n;i++) 
+        Initrand(p[i]); 
+      ga(p,best,a,fres); 
+      b=Dist(a,best); 
+      if(b <min) 
+      { 
+        min = b; 
+        for(i=0;i<m;i++) 
+          rebest[i] = best[i]; 
+      } 
+      fprintf(fres,"n=%3d t=%2d pC=%2d D= %5d ", n,t,posCr,b); 
+      for(i=0;i<m;i++) 
+        fprintf(fres,"%2d ",best[i]); 
+      fprintf(fres,"\n"); 
+    } 
+  } 
+  free(p); 
+}
+```
