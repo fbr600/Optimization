@@ -45,25 +45,30 @@ add it to get the real distance from Barcelona and close the route.
 The size of the population, as we will see later on the results, is one of the trascendent parameters of the 
 problem. We have started for n = 100 individuals, and to get different results, we have incresed it up to 550 
 or 600 individuals.
+
 On the explanation of the GA (Genetic Algorithm), the population must be initialized randomly. To take into 
 account of the restriction of individuals, I have created a specific function in the code of the program in order 
 to get this:
+
 For each individual p, we put first of all p(0) = 3 , this means starting at Barcelona.
 We conside a list of aux = (0,1,2,4,5,6............36) that has 36 elements, observe the abscence of 3.
 we take a number a randomly from 0 to 36, and put p(1) = aux(a), this is the a-th component of aux.
+
 Then we delete this component of the aux list, by copying the laters components from a one step 
 forward, and now we start again by taking a number randomly from 0 to 35, and doing this until we 
 get the whole individual. 
+
 With this we ensure to not repeat any number in the result list. 
 It is harder to explain with words than show the piece of the algorithm:
-    ```
-    // m is 37 and the resultant individual is v[i]
-    for(i=0;i<3;i++) aux[i] = i; 
-      for(i=3;i<m-1;i++) aux[i] = i+1; 
-        for(i=1;i<m;i++) 
-        { 
-          a = random()%(m-i); 
-          v[i] = aux[a]; 
-          for(j=a;j<m-2;j++) aux[j] = aux[j+1]; 
-         }
-    ```
+
+```
+// m is 37 and the resultant individual is v[i]
+for(i=0;i<3;i++) aux[i] = i; 
+  for(i=3;i<m-1;i++) aux[i] = i+1; 
+    for(i=1;i<m;i++) 
+    { 
+      a = random()%(m-i); 
+      v[i] = aux[a]; 
+      for(j=a;j<m-2;j++) aux[j] = aux[j+1]; 
+     }
+```
