@@ -99,11 +99,9 @@ idn0<-first_way_id
 
 ### As results we have:
 
-*The distance
-
-*The path
-
-*The expanded nodes geographical information.
+* The distance
+* The path
+* The expanded nodes geographical information.
 
 ### Screen output
 
