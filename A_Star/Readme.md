@@ -89,8 +89,38 @@ idn0<-first_way_id
 	Function: Astar
 	The input for Astar function is the id of the source and the goal nodes.
 	And the outputs are two files, and the screen information:
-		*path.txt*     ->  coordenates of the nodes of the solution path
-		*expanded.txt* ->  coordenates of the expanded nodes, just to draw it, under the path
+		path.txt     ->  coordenates of the nodes of the solution path
+		expanded.txt ->  coordenates of the expanded nodes, just to draw it, under the path
 		
 		The screen information is the distance from the source to the goal,
 		And the times that the program is taking in each big process.
+
+## Results
+
+### As results we have:
+
+*The distance
+
+*The path
+
+*The expanded nodes geographical information.
+
+### Screen output
+
+This program creates two files the first time, it will takes a few minutes
+If you have already created this files previously you can save this part of
+computation.
+
+*Is this time the first time you run the program? (y/n):n*
+
+nodes	23895681
+ways	1417363
+
+Nodes stored: time now:22.549999
+
+Neighbours stored: time now:580.849976
+
+GOAL REACHED
+DIST BCN - SEVILLA 988793.732264
+
+	AStar completed: time now:636.250000
