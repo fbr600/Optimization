@@ -111,14 +111,14 @@ computation.
 
 *Is this time the first time you run the program? (y/n):n*
 
-nodes	23895681
-ways	1417363
+	nodes	23895681
+	ways	1417363
 
-Nodes stored: time now:22.549999
+	Nodes stored: time now:22.549999
 
-Neighbours stored: time now:580.849976
+	Neighbours stored: time now:580.849976
 
-GOAL REACHED
-DIST BCN - SEVILLA 988793.732264
+	GOAL REACHED
+	DIST BCN - SEVILLA 988793.732264
 
 	AStar completed: time now:636.250000
