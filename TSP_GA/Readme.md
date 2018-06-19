@@ -125,12 +125,14 @@ parameters.
 To solve that, I have created a serial of iterations where we are computing the GA for each value of each 
 parameter, acting in a certaing range that I have tried in previous testings.
 
+```
 int    m       =  37;        //dim of the problem, number of cities
 int    n       =  250 - 550; //population (required to be an even number) 
 int    t       =  2 - 11;    //number of elements to do the parents selec 
 int    posCr   =  13 - 23;   //numb of positions choosed in crossover 
 int    maxiter =  100;       //number max of iterations
 double mutq    = 0.1;        //probability of mutation
+```
 
 This is the piece of code that iterates and Compute a solution for each combination of the parameters acting 
 in the range explained before.
