@@ -60,7 +60,7 @@ get the whole individual.
 With this we ensure to not repeat any number in the result list. 
 It is harder to explain with words than show the piece of the algorithm:
 
-```
+```c
 // m is 37 and the resultant individual is v[i]
 for(i=0;i<3;i++) aux[i] = i; 
   for(i=3;i<m-1;i++) aux[i] = i+1; 
@@ -124,7 +124,7 @@ parameters.
 To solve that, I have created a serial of iterations where we are computing the GA for each value of each 
 parameter, acting in a certaing range that I have tried in previous testings.
 
-```
+```c
 int    m       =  37;        //dim of the problem, number of cities
 int    n       =  250 - 550; //population (required to be an even number) 
 int    t       =  2 - 11;    //number of elements to do the parents selec 
@@ -136,7 +136,7 @@ double mutq    = 0.1;        //probability of mutation
 This is the piece of code that iterates and Compute a solution for each combination of the parameters acting 
 in the range explained before.
 
-```
+```c
 for(n=250;n<550;n+=10) 
 {
   p = (int**)malloc(n*sizeof(int*)); 
