@@ -26,13 +26,12 @@ struct node
 
 The singular or interessting thing about this structure is that the whole information that we need about the graph, including the information of nodes and the ways as well, is stored in each node, as follows:
 
- * ** nb 	The field **nb (neighbours) is an array of pointers to each of the neighbours of the node, so 	pointers to other struct node.
-	N2 is neighbour of n1:
-	If exist one way in which the list of nodes is  ……/idn*/idn*/idn1/idn2/idn*/………
-	Then, in the node[n1]->nb[i] = &node[n2].
-	And if the way is not oneway, then we put the symetric case
-	Node[n2]->nb[i] = &node[n1].
+ * ** nb 	The field ** nb (neighbours) is an array of pointers to each of the neighbours of the node, so 	pointers to other struct node.
+	+ N2 is neighbour of n1:
+	+ If exist one way in which the list of nodes is  ……/idn*/idn*/idn1/idn2/idn*/………
+	+ Then, in the node[n1]->nb[i] = &node[n2].
+	+ And if the way is not oneway, then we put the symetric case Node[n2]->nb[i] = &node[n1].
 
-Valn 	means the number of neighbours that the node has.
-	It is calculated while we are scanning all the ways and storing the nb-pointers information.
-	This number will be very usefull in the Astar.
+* Valn 	+ means the number of neighbours that the node has.
+	+ It is calculated while we are scanning all the ways and storing the nb-pointers information.
+	+ This number will be very usefull in the Astar.
