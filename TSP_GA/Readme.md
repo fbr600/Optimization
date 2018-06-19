@@ -143,9 +143,9 @@ for(n=250;n<550;n+=10)
   p = (int**)malloc(n*sizeof(int*)); 
   for(i=0;i<n;i++) 
     p[i] = (int*)malloc(m*sizeof(double)); 
-    for(t=2;t<11;t+=1) 
-      for(posCr=13;posCr<23;posCr+=1) 
-      { 
+  for(t=2;t<11;t+=1) 
+    for(posCr=13;posCr<23;posCr+=1) 
+    { 
       //Inizialization the population randomly 
       for(i=0;i<n;i++) 
         Initrand(p[i]); 
@@ -162,7 +162,6 @@ for(n=250;n<550;n+=10)
         fprintf(fres,"%2d ",best[i]); 
       fprintf(fres,"\n"); 
     } 
-  } 
   free(p); 
 }
 ```
