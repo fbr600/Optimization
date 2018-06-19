@@ -35,3 +35,21 @@ The singular or interessting thing about this structure is that the whole inform
 * Valn 	+ means the number of neighbours that the node has.
 	+ It is calculated while we are scanning all the ways and storing the nb-pointers information.
 	+ This number will be very usefull in the Astar.
+
+## Sequence of actions
+
+### 1 Read file ‘spain.csv’
+
+You can download the file [here (348.5 MB)](http://mat.uab.cat/~alseda/MasterOpt/spain.csv.zip) 
+2 Create a file called ‘nodes.txt’
+	Function: WriteNodes
+	This function reads the file ‘spain.csv’ and return the number of nodes that has the graph.
+	Format: idnode / latnode / lonnode
+3 Create a file called ‘ways.txt’
+	Function: WriteWays
+	Format:nº nodes in the way / idway / 1 if is oneway, 0 if not / idnode1 / idnod2 / ......
+	One important information that is got in this function is the number of nodes that there are in 	each way. This will be usefull to scann the ways in order to assign the neighbours to each 	node.
+	Also, as in the Nodes case, this function return the number of  ways.
+
+If steps 1 , 2, 3 has been already done, there is the possibility of skip this steps and start at 4. 
+Taking into account that if we did not run this function, we would not know the number of nodes and ways, so I have imposed the dimensions in the case of not running this function, for accidental cases. 
