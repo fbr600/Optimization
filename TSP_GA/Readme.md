@@ -72,3 +72,65 @@ for(i=0;i<3;i++) aux[i] = i;
       for(j=a;j<m-2;j++) aux[j] = aux[j+1]; 
      }
 ```
+
+### Genetic Operations
+
+#### Selecting parents strategy
+
+The selection of the parents in each step of the evolution of the population is the tournment one. It consist in 
+take t individuals randomly, and choosing the fittest one of this t elements. And for the other parent, using the
+same strategy again.
+
+The parameter t is one of most determinants on the problem as we will see with the results. The reason is 
+that if t is big, then we are being very exploitative, and in very few steps all the population will have the same 
+“genetic sequence”. Contrary, if t is small we are being very explorative, this option will give us the bests 
+solutions, as we will see later on.
+
+#### Crossover
+
+The crossover that I have used is one that is position based. We choose posCr positions randomly. First we 
+copy from parent one tho the child this positions and information. And then we complete the information from 
+the parent two filling the blanks of the offspring orederly.
+
+This will be an other parameter of the problem, the number of positions that the parent 1 pass to the son.
+
+#### Mutation
+
+The mutation is simple, just take two components randomly and interchange them.
+There is a paramenter to control the proportion of mutating, it is a number pm from 0 to 1, and it means that 
+every member of offspring is mutated with probability pm.
+
+Since we are taking two positions randomly, in the case that the two positions are the same, we interchange 
+this position with the 10 th one. This is an arbitrary fact that may add some randomness to the mutation, and 
+to the altgorithm.
+
+An important observation is that looking only at the results, the program give the bests results without using 
+mutation, i.e. Initialazing the parameter pm as 0.
+
+Another observation is that if we put positive mutation probability, we have to make large the parameter of 
+the parets selection, increasing the pm, we are becoming more explorative, and to compensate this fact we 
+back to more exploitative increasing the parent selection parameter. 
+
+### Renovation of population strategy
+
+The strategy for renew the population is simple, I create n new individuals from the n originals, and in each 
+step the whle population is replaced for the new one.
+
+### Program
+
+I have wrote some functions to program all this genetic operations and the important one that is ga, the 
+genetic algorithm. I have seen that the result of the best obtained element changes a lot with changing the 
+parameters.
+
+To solve that, I have created a serial of iterations where we are computing the GA for each value of each 
+parameter, acting in a certaing range that I have tried in previous testings.
+
+int    m       =  37;        //dim of the problem, number of cities
+int    n       =  250 - 550; //population (required to be an even number) 
+int    t       =  2 - 11;    //number of elements to do the parents selec 
+int    posCr   =  13 - 23;   //numb of positions choosed in crossover 
+int    maxiter =  100;       //number max of iterations
+double mutq    = 0.1;        //probability of mutation
+
+This is the piece of code that iterates and Compute a solution for each combination of the parameters acting 
+in the range explained before.
