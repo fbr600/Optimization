@@ -49,7 +49,7 @@ You can download the file [here (348.5 MB)](http://mat.uab.cat/~alseda/MasterOpt
 	
 ### 3 Create a file called *‘ways.txt’*
 	Function: WriteWays
-	Format:nº nodes in the way / idway / 1 if is oneway, 0 if not / idnode1 / idnod2 / ......
+	Format: number of nodes in the way / idway / 1 if is oneway, 0 if not / idnode1 / idnod2 / ......
 	One important information that is got in this function is the number of nodes that there are in 	
 	each way. This will be usefull to scann the ways in order to assign the neighbours to each node.
 	Also, as in the Nodes case, this function return the number of  ways.
@@ -57,4 +57,12 @@ You can download the file [here (348.5 MB)](http://mat.uab.cat/~alseda/MasterOpt
 If steps 1 , 2, 3 has been already done, there is the possibility of skip this steps and start at 4. 
 Taking into account that if we did not run this function, we would not know the number of nodes and ways, so I have imposed the dimensions in the case of not running this function, for accidental cases. 
 
+### 4 Read the file *‘nodes.txt’* and store the nodes information 
+	Function: ReadNodes
+	We just store the fisical information of the node, it is : id, lon and lat. The rest is initialized 	to 0.
+
+### 5 Read the file *‘ways.txt’* and store the information about neighbours
+	Function: ReadNeighbours
+	This is the more expensive , in terms of time, process on the whole program.
+	The number of nodes for each way allows us to scann the way exactly from the begining to the end, the general idea in pseudocode would be:
 
