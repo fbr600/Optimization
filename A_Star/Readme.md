@@ -64,5 +64,24 @@ Taking into account that if we did not run this function, we would not know the 
 ### 5 Read the file *‘ways.txt’* and store the information about neighbours
 	Function: ReadNeighbours
 	This is the more expensive , in terms of time, process on the whole program.
-	The number of nodes for each way allows us to scann the way exactly from the begining to the end, the general idea in pseudocode would be:
+	The number of nodes for each way allows us to scann the way exactly from the begining to the end, 
+	the general idea in pseudocode would be:
+
+```
+idn0<-first_way_id
+	n0<-SearchNode(idn0)	
+	While  iter < way_number_nodes do
+		idn1<- current_id (starting for the second)
+		n1<-SearchNode(idn1)
+		n0->valn +=1
+		Reallocate(n1->valn,n0->nb)
+		n0->nb[n0-valn-1]=n1
+		if(way_oneway==0)
+			n1->valn +=1
+			Reallocate(n1->valn,n1->nb)
+			n1->nb[n1->valn-1]=n0
+		end if
+		n0 = n1
+	end do
+```
 
