@@ -12,7 +12,6 @@ using GA, according to driving distance.
 * Genetic Operations
 * Renovation of population strategy
 * Program
-* Delivered files
 * Results and Conclusions
 
 ### Data structure and particular stuff
@@ -179,3 +178,27 @@ n=400 t= 3 pC=15 D= 17466 3 21 25 13 24 28 34 22 33 19 12 5 36 23 27 35 2 31 30 
 n=400 t= 4 pC=13 D= 17955 3 20 16 15 18 8 9 14 4 0 32 29 1 6 10 17 7 26 11 31 30 22 13 24 28 34 2 35 27 23 36 5 12 19 33 25 21 
 n=400 t= 4 pC=15 D= 17488 3 21 25 13 24 28 33 22 34 2 35 27 23 36 5 12 30 31 11 4 14 9 8 18 0 32 29 1 6 10 17 7 15 26 19 16 20 
 ```
+
+### Results and conclusions
+
+The three bests solutions that i got are the following
+
+```
+/*16515*/ best1[37]={3,21,25,33,22,13,24,28,34,2,35,27,4,14,9,8,0,32,29,1,6,10,17,7,15,26,18,11,30,31,23,36,5,12,19,16,20}, 
+/*16533*/ best2[37]={3,20,16,19,12,5,36,23,31,30,18,26,15,7,17,10,6,1,29,32,0,8,11,9,14,4,27,35,2,34,24,28,13,22,33,25,21},
+/*16548*/ best3[37]={3,20,16,19,12,5,36,23,31,30,11,8,18,26,15,7,17,10,6,1,29,32,0,14,9,4,27,35,2,34,24,28,13,22,33,25,21};
+```
+
+#### Observations
+
+If we apply each of this combinations of parameters to the simple program 'tsp.c', we would not get this best 
+solution.
+
+This is due to the combinatorial fact, or randomness of the algorithm. I got this results performing tsp2.c and, 
+so, running GA more than one thausand “shots” every time, this makes changing the initialization of the 
+population very important, and adds a fact that I have not comented still now, that is the difficult of generates 
+random numbers with computation.
+
+In consequence, is not sure that this are the best solutions that ever this algorithm is able to calculate. But for
+the statistical of the quantity of solutions I have seen performing this program, I think this are not too bad 
+solutions.
