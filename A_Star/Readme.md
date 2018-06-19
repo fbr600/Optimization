@@ -85,3 +85,12 @@ idn0<-first_way_id
 	end do
 ```
 
+### 6 Call Astar with the input of the graph and the source and goal id’s.
+	Function: Astar
+	The input for Astar function is the id of the source and the goal nodes.
+	And the outputs are two files, and the screen information:
+		*path.txt*     ->  coordenates of the nodes of the solution path
+		*expanded.txt* ->  coordenates of the expanded nodes, just to draw it, under the path
+		
+		The screen information is the distance from the source to the goal,
+		And the times that the program is taking in each big process.
