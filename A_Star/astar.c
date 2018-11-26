@@ -22,11 +22,11 @@ int 				c;
 struct node
 {
 	unsigned long int 	id;
-	double				lat,lon;
-	double 				g,h;
-	int					open, close;
-	int					valn;		//valence of the node
-	struct node			**nb;		//array of pointers to each neighbours, the dim of this array is valn
+	double			lat,lon;
+	double 			g,h;
+	int			open, close;
+	int			valn;		//valence of the node
+	struct node		**nb;		//array of pointers to each neighbours, the dim of this array is valn
 	struct node 		*parent;
 };
 
